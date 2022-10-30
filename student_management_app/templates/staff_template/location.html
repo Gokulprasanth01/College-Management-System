@@ -1,0 +1,31 @@
+{% extends 'staff_template/base_template.html' %}
+
+{% block page_title %}
+Student Location
+{% endblock page_title %}
+
+{% block main_content %}
+
+{% load static %}
+
+<div class="form-group">
+    <label>Location </label>
+    <select class="form-control" name="student" id="student">
+        
+        print(len(location))
+        {% for student in students %}
+        
+        <option value="{{ student.id }}">{{ student.address }}</option>
+        {% endfor %}
+    </select>
+</div>
+
+<div class="card-footer">
+    <button type="button" class="btn btn-primary" id="fetch_student">Fetch Student</button>
+</div>
+
+</section>
+
+{% endblock main_content %}
+
+{% block custom_js %}
